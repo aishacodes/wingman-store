@@ -20,7 +20,7 @@ const NavigationTabs = ({tabs}:{tabs:Tab[]}) => {
             flex items-center gap-2 px-4 py-2 rounded-full text-sm transition-colors
             ${
               activeTab === tab.routeName
-                ? 'bg-emerald-100 text-lightGreen'
+                ? 'bg-emerald-100 text-darkBlue'
                 : 'text-gray-500 hover:text-gray-700'
             }
           `}
