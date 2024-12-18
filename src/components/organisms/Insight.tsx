@@ -11,17 +11,17 @@ const Insight = () => {
       <div className=" flex flex-wrap gap-6">
         <ConsultationChart />
         <WeeklyChart />
-        <div className="bg-custom-linear p-6 w-[16.25rem]  rounded-[1.25rem]">
-          <div className="flex items-center gap-2">
+        <div className="bg-custom-linear p-6 w-[16.25rem] rounded-[1.25rem]">
+          <div className="flex items-center gap-2 mb-6">
             <img src={`/svgs/green-chat.svg`} alt="" />
             <Heading2 classNames="text-lightGreen">Forecast</Heading2>
           </div>
-          <div className="mb-12 text-white">
+          <div className="mb-6 text-white">
             <div className="flex items-start gap-2 mb-3">
               <span className="text-[3.5rem] font-semibold">+15%</span>
               <TrendingUp className="w-9 h-9" />
             </div>
-            <p className="text-lg leading-snug">
+            <p className="text-sm leading-snug">
               forecasted increase in your sales closed by the end of the current
               month
             </p>
@@ -31,7 +31,7 @@ const Insight = () => {
               <span className="text-[3.5rem] font-semibold">+20%</span>
               <TrendingUp className="w-9 h-9" />
             </div>
-            <p className="text-lg leading-snug">
+            <p className="text-sm leading-snug">
               forecasted increase in consultations by the end of the current
               month
             </p>
