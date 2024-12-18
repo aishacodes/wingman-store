@@ -15,7 +15,7 @@ const TopNavItem = ({
       to={path}
       className={({ isActive }) =>
         clsx(
-          'flex items-center px-3 py-2 gap-x-3 text-lg bg-[#CCFBEF] rounded-full',
+          'flex items-center px-2 md:px-3 py-2 gap-x-3 text-sm md:text-lg bg-[#CCFBEF] rounded-full',
           isActive ? 'border-white' : 'border-transparent '
         )
       }

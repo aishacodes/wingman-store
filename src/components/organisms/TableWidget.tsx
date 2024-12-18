@@ -53,103 +53,106 @@ export function TableWidget<T extends Record<string, any>>({
 
   const getSortIcon = (columnKey: keyof T) => {
     if (sortConfig.key !== columnKey) {
-      return <ChevronDown className="w-4 h-4 text-gray-400" />;
+      return <ChevronDown className="w-3 h-3 md:w-4 md:h-4 text-gray-400" />;
     }
     return sortConfig.direction === 'asc' ? (
-      <ChevronUp className="w-4 h-4" />
+      <ChevronUp className="w-3 h-3 md:w-4 md:h-4" />
     ) : (
-      <ChevronDown className="w-4 h-4" />
+      <ChevronDown className="w-3 h-3 md:w-4 md:h-4" />
     );
   };
 
   return (
-    <div className={`w-full`}>
-      <table className=" border border-gray1 rounded-lg bg-white w-full">
-        <thead className="bg-[#F9FAFB]  border-b border-gray1">
-          <tr>
-            {columns.map((column) => (
-              <th
-                key={String(column.key)}
-                className="px-6 py-4 text-left text-sm font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
-                onClick={() => handleSort(column.key)}
-              >
-                <div className="flex items-center space-x-1">
-                  <span>{column.label}</span>
-                  {getSortIcon(column.key)}
-                </div>
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {paginatedData.map((row, rowIndex) => (
-            <tr
-              key={rowIndex}
-              className={`hover:bg-gray-50 ${
-                onRowClick ? 'cursor-pointer' : ''
-              }`}
-              onClick={() => onRowClick?.(row)}
-            >
+    <div className="w-full overflow-hidden">
+      <div className="overflow-x-auto">
+        <table className="min-w-full border border-gray1 rounded-lg bg-white">
+          <thead className="bg-[#F9FAFB] border-b border-gray1">
+            <tr>
               {columns.map((column) => (
-                <td
+                <th
                   key={String(column.key)}
-                  className="px-6 py-4 text-sm text-gray-500"
+                  className="px-2 md:px-6 py-3 md:py-4 text-left text-xs md:text-sm font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 whitespace-nowrap"
+                  onClick={() => handleSort(column.key)}
                 >
-                  {column.key == 'title' ? (
-                    <div className="flex items-center gap-x-4">
-                      <img src={row.image} className="w-10 h-10" alt="" />
-                      <p>{row.title}</p>
-                    </div>
-                  ) : column.key == 'price' ? (
-                    '$' + row[column.key]
-                  ) : (
-                    row[column.key]
-                  )}
-                </td>
+                  <div className="flex items-center space-x-1">
+                    <span>{column.label}</span>
+                    {getSortIcon(column.key)}
+                  </div>
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className="px-6 py-4 flex items-center justify-between ">
+          </thead>
+          <tbody>
+            {paginatedData.map((row, rowIndex) => (
+              <tr
+                key={rowIndex}
+                className={`hover:bg-gray-50 ${
+                  onRowClick ? 'cursor-pointer' : ''
+                }`}
+                onClick={() => onRowClick?.(row)}
+              >
+                {columns.map((column) => (
+                  <td
+                    key={String(column.key)}
+                    className="px-2 md:px-6 py-3 md:py-4 text-xs md:text-sm text-gray-500 whitespace-nowrap"
+                  >
+                    {column.key == 'title' ? (
+                      <div className="flex items-center gap-x-2 md:gap-x-4">
+                        <img src={row.image} className="w-8 h-8 md:w-10 md:h-10" alt="" />
+                        <p>{row.title}</p>
+                      </div>
+                    ) : column.key == 'price' ? (
+                      '$' + row[column.key]
+                    ) : (
+                      row[column.key]
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="px-2 md:px-6 py-3 md:py-4 flex flex-col md:flex-row items-start md:items-center justify-between space-y-3 md:space-y-0">
         <div className="flex items-center space-x-2">
           <button
             onClick={() => goToPage(1)}
             disabled={currentPage === 1}
-            className="p-2 rounded hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-1 md:p-2 rounded hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="First page"
           >
-            <ChevronsLeft className="w-4 h-4" />
+            <ChevronsLeft className="w-3 h-3 md:w-4 md:h-4" />
           </button>
           <button
             onClick={() => goToPage(currentPage - 1)}
             disabled={currentPage === 1}
-            className="p-2 rounded hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-1 md:p-2 rounded hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="Previous page"
           >
-            <ChevronLeft className="w-4 h-4" />
+            <ChevronLeft className="w-3 h-3 md:w-4 md:h-4" />
           </button>
-          <span className="text-sm text-gray-700">
+          <span className="text-xs md:text-sm text-gray-700">
             Page {currentPage} of {totalPages}
           </span>
           <button
             onClick={() => goToPage(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className="p-2 rounded hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-1 md:p-2 rounded hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="Next page"
           >
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
           </button>
           <button
             onClick={() => goToPage(totalPages)}
             disabled={currentPage === totalPages}
-            className="p-2 rounded hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-1 md:p-2 rounded hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="Last page"
           >
-            <ChevronsRight className="w-4 h-4" />
+            <ChevronsRight className="w-3 h-3 md:w-4 md:h-4" />
           </button>
         </div>
-        <div className="text-sm text-gray-700">
+        <div className="text-xs md:text-sm text-gray-700">
           Showing {startIndex + 1} to{' '}
           {Math.min(startIndex + itemsPerPage, data.length)} of {data.length}{' '}
           entries

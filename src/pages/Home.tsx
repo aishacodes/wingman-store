@@ -8,7 +8,7 @@ import Insight from '@/components/organisms/Insight.tsx';
 const Home = () => {
   return (
     <DashboardLayout>
-      <div className="px-6 py-8 shadow-cardShadow rounded-[1.25rem]">
+      <div className="px-3 md:px-6 py-8 shadow-cardShadow rounded-[1.25rem]">
         <Heading classNames="mb-8">At a glance</Heading>
         <section className="grid md:grid-cols-autofill gap-x-8  gap-y-6 mb-8">
           {statisticsSummary.map((item, index) => (
