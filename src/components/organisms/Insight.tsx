@@ -8,7 +8,7 @@ const Insight = () => {
   return (
     <section>
       <Heading classNames="py-8">Insights</Heading>
-      <div className="grid grid-cols-[auto_auto_auto] gap-x-6">
+      <div className=" flex flex-wrap gap-6">
         <ConsultationChart />
         <WeeklyChart />
         <div className="bg-custom-linear p-6 w-[16.25rem]  rounded-[1.25rem]">

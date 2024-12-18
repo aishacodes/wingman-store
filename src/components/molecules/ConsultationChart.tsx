@@ -23,7 +23,7 @@ const renderLegendText = (value: string) => {
 
 const ConsultationChart: React.FC = () => {
   return (
-    <div className="p-6 shadow-cardShadow rounded-[1.25rem] w-[42.75rem]">
+    <div className="p-6 shadow-cardShadow rounded-[1.25rem] w-full lg:w-[42.75rem]">
       <div className="flex items-center gap-2 mb-6">
         <img src={`/svgs/gray-chat.svg`} alt="" />
         <Heading2>Consultations</Heading2>
