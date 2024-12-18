@@ -4,12 +4,11 @@ import TopNav from './TopNav';
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <main className="h-screen w-screen overflow-hidden grid grid-cols-[3.75rem_1fr]">
+    <main className="h-screen w-screen  grid grid-cols-[3.75rem_1fr] ">
       <SideBar />
-      <section>
+      <section className="flex flex-col h-full overflow-hidden">
         <TopNav />
-        <div className="py-9 px-10 overflow-y-auto">  {children}</div>
-      
+        <div className="py-9 px-10 overflow-y-auto flex-grow"> {children}</div>
       </section>
     </main>
   );

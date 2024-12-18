@@ -14,10 +14,13 @@ const TopNavItem = ({
     <NavLink
       to={path}
       className={({ isActive }) =>
-        clsx('flex items-center', isActive ? 'border-white' : 'border-transparent')
+        clsx(
+          'flex items-center px-3 py-2 gap-x-3 text-lg bg-[#CCFBEF] rounded-full',
+          isActive ? 'border-white' : 'border-transparent '
+        )
       }
     >
-      <img src={`/svgs/${icon}`}  />
+      <img src={`/svgs/${icon}`} />
       <p className="text-primary">{routeName}</p>
     </NavLink>
   );

@@ -1,13 +1,7 @@
 import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
 
-const SideBarItem = ({
-  path,
-  icon,
-}: {
-  path: string;
-  icon: string;
-}) => {
+const SideBarItem = ({ path, icon }: { path: string; icon: string }) => {
   return (
     <NavLink
       to={path}
