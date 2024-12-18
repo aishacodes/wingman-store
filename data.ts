@@ -18,18 +18,29 @@ export const sideBarLinks = [
 
 export const topBarItems = [
   {
-    icon: '',
+    icon: 'pie.svg',
     routeName: 'Summary',
     path: '',
   },
   {
-    icon: '',
+    icon: 'sales.svg',
     routeName: 'Sales',
     path: '',
   },
   {
-    icon: '',
+    icon: 'chat-tear.svg',
     routeName: 'Chats',
     path: '',
   },
+];
+
+export const statisticsSummary = [
+  {
+    name: 'Consultations',
+  },
+  { name: 'ORDERS PLACED' },
+  { name: 'CONVERSION ' },
+  {name:"TOTAL SALES VALUE"},
+  {name:"AVG ORDER VALUE"},
+  {name:"COMMISSION PAID"}
 ];

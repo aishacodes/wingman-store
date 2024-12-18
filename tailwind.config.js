@@ -58,7 +58,15 @@ module.exports = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
-  		}
+
+  		},
+      gridTemplateColumns: {
+        autofill: "repeat(auto-fill, minmax(24.75rem, 1fr))",
+      },
+      boxShadow:{
+        cardShadow: "0px 0px 0px 1px #0000000F"
+      },
+     
   	}
   },
   plugins: [require("tailwindcss-animate")],

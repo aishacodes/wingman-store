@@ -6,7 +6,7 @@ const SideBarItem = ({
   icon,
 }: {
   path: string;
-  icon: string | undefined;
+  icon: string;
 }) => {
   return (
     <NavLink
