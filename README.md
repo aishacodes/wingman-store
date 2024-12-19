@@ -28,6 +28,7 @@ Live Demo
 -   **Deployment:** Vercel
 -   **State Management:** React Hooks
 -   **Data Handling:** [Fake Api](https://fakestoreapi.com/)
+-   **Charts:** React recharts
 
 🛠️ Installation
 ----------------
