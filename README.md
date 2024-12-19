@@ -50,7 +50,7 @@ Copy
 
 Copy
 
-`cd wingman-frontend-challenge
+`cd wingman-store
 npm install`
 ```
 
