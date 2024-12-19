@@ -21,7 +21,7 @@ const SideBar = () => {
       </button>
       <aside
         className={cn(
-          'bg-primary py-6 px-3 flex flex-col absolute lg:relative transform transition-transform duration-300 ease-in-out h-screen',
+          'bg-primary py-6 px-3 flex flex-col absolute z-10 lg:relative transform transition-transform duration-300 ease-in-out h-screen',
          isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         )}
       >
