@@ -8,9 +8,9 @@ Live Demo
 
 [Visit Live Site](https://wingman-store-three.vercel.app/)
 
-![alt text](image-2.png)
-![alt text](image-3.png)
-![Preview](image-1.png)
+![alt text](/public/image-2.png)
+![alt text](/public/image-3.png)
+![Preview](/public/image-1.png)
 🚀 Features
 -----------
 
