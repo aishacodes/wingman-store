@@ -26,7 +26,7 @@ Live Demo
 -   **Styling:** Tailwind CSS + shadcn/ui
 -   **Chat Integration:** Google Gemini API
 -   **Deployment:** Vercel
--   **State Management:** React Hooks
+-   **State Management:** React Hooks and local storage for the chats
 -   **Data Handling:** [Fake Api](https://fakestoreapi.com/)
 -   **Charts:** React recharts
 

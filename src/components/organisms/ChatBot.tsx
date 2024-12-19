@@ -1,31 +1,14 @@
-import { FormEvent, useState } from 'react';
-import { Send, Bot, User, Trash } from 'lucide-react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
+import { Send, Bot, Trash } from 'lucide-react';
 import run from '@/lib/gemini';
-import { cn } from '@/lib/utils';
+import ChatMessage from "../molecules/ChatMessage";
 
-const ChatMessage = ({
-  message,
-  isBot,
-}: {
-  message: string;
-  isBot: boolean;
-}) => (
-  <div className={cn('flex gap-3 p-4', isBot ? 'bg-gray-50' : ' ')}>
-    {isBot ? (
-      <Bot className="h-8 w-8 text-green-600" />
-    ) : (
-      <User className="h-8 w-8 text-gray-600" />
-    )}
-    <div className="flex-1">
-      <p className="font-medium mb-1">{isBot ? 'Gemini' : 'You'}</p>
-      <p className="text-gray-700 whitespace-pre-wrap">{message}</p>
-    </div>
-  </div>
-);
+
+const STORAGE_KEY = 'chatbot-messages';
 
 const ChatBot = () => {
   const [messages, setMessages] = useState<{ text: string; isBot: boolean }[]>(
-    [{ text: "Hi, I'm your Assistant. How may I help you today?", isBot: true }]
+    []
   );
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -33,7 +16,37 @@ const ChatBot = () => {
   const handleClearChat = () => {
     setMessages([]);
     setInput('');
+    localStorage.removeItem(STORAGE_KEY);
+
   };
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const messagesEndRef = useRef<any>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]); 
+
+  useEffect(() => {
+    const savedMessages = localStorage.getItem(STORAGE_KEY);
+    if (savedMessages) {
+      try {
+        setMessages(JSON.parse(savedMessages));
+      } catch (error) {
+        console.error('Error loading messages:', error);
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    }else{
+      setMessages([{ text: "Hi, I'm your Assistant. How may I help you today?", isBot: true }])
+    }
+  }, []);
+  if (messages.length > 0) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+  }
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -97,6 +110,7 @@ const ChatBot = () => {
             <p>Thinking...</p>
           </div>
         )}
+         <div ref={messagesEndRef} />
       </div>
 
       <form onSubmit={handleSubmit} className="p-4 border-t">
