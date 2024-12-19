@@ -25,7 +25,7 @@ Live Demo
 
 ### Technical Stack
 
--   **Frontend Framework:** React
+-   **Frontend Framework:** React + Typescript
 -   **Styling:** Tailwind CSS + shadcn/ui
 -   **Chat Integration:** Google Gemini API
 -   **Deployment:** Vercel
