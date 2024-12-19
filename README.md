@@ -1,4 +1,4 @@
-Wingman Frontend Challenge
+Wingman Store
 ==========================
 
 A React-based implementation of the Wingman e-commerce platform, featuring a responsive design and AI-powered chat assistance.
