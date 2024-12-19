@@ -1,12 +1,13 @@
-import ChatBot from "@/components/organisms/ChatBot"
-import DashboardLayout from "@/components/templates/DashboardLayout"
-import React from 'react'
+import ChatBot from '@/components/organisms/ChatBot';
+import DashboardLayout from '@/components/templates/DashboardLayout';
 
 const Chat = () => {
   return (
-    <DashboardLayout>        <ChatBot />
-</DashboardLayout>
-  )
-}
+    <DashboardLayout>
+      {' '}
+      <ChatBot />
+    </DashboardLayout>
+  );
+};
 
-export default Chat
+export default Chat;
