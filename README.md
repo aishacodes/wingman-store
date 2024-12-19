@@ -8,7 +8,7 @@ Live Demo
 
 [Visit Live Site](https://wingman-store-three.vercel.app/)
 
-![Preview](image.png)
+![Preview](image-1.png)
 🚀 Features
 -----------
 
