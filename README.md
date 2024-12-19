@@ -42,7 +42,7 @@ Live Demo
 
 Copy
 
-`git clone https://github.com/aishacodes/wingman-frontend-challenge.git`
+`git clone https://github.com/aishacodes/wingman-store.git`
 ```
 1.  Install dependencies:
 
