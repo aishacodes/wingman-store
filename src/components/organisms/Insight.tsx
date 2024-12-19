@@ -11,7 +11,8 @@ const Insight = () => {
       <div className=" flex flex-wrap gap-6">
         <ConsultationChart />
         <WeeklyChart />
-        <div className="bg-custom-linear p-6 w-[16.25rem] rounded-[1.25rem]">
+        <div className="bg-custom-linear p-6 w-[16.25rem] rounded-[1.25rem] relative">
+          <img src="/svgs/pulse.svg" alt="" className="absolute top-0 right-0 left-0" />
           <div className="flex items-center gap-2 mb-6">
             <img src={`/svgs/green-chat.svg`} alt="" />
             <Heading2 classNames="text-lightGreen">Forecast</Heading2>
