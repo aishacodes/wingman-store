@@ -3,7 +3,7 @@ import Heading from '../atom/Heading';
 import TableWidget from './TableWidget';
 import TableLoader from '../molecules/TableLoader';
 
-const Orders = () => {
+const OrderSummary = () => {
   const [products, setProducts] = useState([]);
   const [isLoading, setisLoading] = useState(false);
 
@@ -30,7 +30,7 @@ const Orders = () => {
     { label: 'category', key: 'category' },
   ];
   return (
-    <section className="py-8">
+    <>
       <Heading classNames="mb-8">Orders</Heading>
       <div>
         {isLoading ? (
@@ -39,8 +39,8 @@ const Orders = () => {
           <TableWidget columns={columns} data={products} />
         )}
       </div>
-    </section>
+    </>
   );
 };
 
-export default Orders;
+export default OrderSummary;

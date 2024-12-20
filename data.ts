@@ -20,17 +20,17 @@ export const topBarItems = [
   {
     icon: 'pie.svg',
     routeName: 'Summary',
-    path: '',
+    path: '/',
   },
   {
     icon: 'sales.svg',
     routeName: 'Sales',
-    path: '',
+    path: '/orders',
   },
   {
     icon: 'chat-tear.svg',
     routeName: 'Chats',
-    path: '',
+    path: '/chat',
   },
 ];
 
