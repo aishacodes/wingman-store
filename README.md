@@ -42,7 +42,7 @@ Live Demo
 
 Copy
 
-`git clone https://github.com/your-username/wingman-frontend-challenge.git`
+`git clone https://github.com/aishacodes/wingman-store.git`
 ```
 1.  Install dependencies:
 
@@ -50,7 +50,7 @@ Copy
 
 Copy
 
-`cd wingman-frontend-challenge
+`cd wingman-store
 npm install`
 ```
 
